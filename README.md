@@ -1,5 +1,6 @@
 # MqttRFID
-RF Identification tags for model trains using a Mqtt Broker
+RF Identification tags for model trains using a Mqtt Broker.
+(This is a rewrite of the SerialRFID program replacing the serial prot with a MQTT broker.)
 To download use the release button on the right-hand side. You can use the EXE file if running on Windows or the ZIP file to get the JAR files. You will also need the Arduino.zip file to go into the reader Nano Esp32.
 
 Fundamentally MqttRFID provides the user with an easy to use Liquid Crystal Display (LCD) showing the road markings of your rolling stock. 
