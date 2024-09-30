@@ -4,9 +4,11 @@ GETTING STARTED
 
 I recommend reading at least the first few pages of the manual before proceeding.
 
-If you're reading this I assume that you have Unzipped this folder somewhere on your hard drive.
-
-I would simplify it by renaming it to MqttRFID. Place it in a permanent location before doing anything else. 
+I tried to make a zip file but it became too large for a Github upload. 
+- make a folder (MqttRFID) somewhere permanent on your hard drive.
+- copy the EXE file here
+- make a subFolder (lib)
+- copy the lib files to your lib folder.
 
 -------------------------------------------
 if you downloaded MqttRFID_jar.zip
