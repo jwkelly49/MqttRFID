@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="626.0" prefWidth="620.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readers.NewReaderController">
+   <children>
+      <Label layoutX="93.0" layoutY="29.0" text="Install New Reader">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="100.0" text="Select one of these available addresses">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="readerName" layoutX="78.0" layoutY="481.0" prefHeight="25.0" prefWidth="465.0" promptText="Provide a Location name if desired">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="install" layoutX="93.0" layoutY="542.0" mnemonicParsing="false" onAction="#BtnInstall" prefHeight="51.0" prefWidth="156.0" text="Install">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancel" layoutX="360.0" layoutY="542.0" mnemonicParsing="false" onAction="#BtnCancel" prefHeight="51.0" prefWidth="156.0" text="Cancel">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableView" layoutX="26.0" layoutY="142.0" onMouseClicked="#tableViewMouseAction" prefHeight="269.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="readerCol" prefWidth="75.0" text="Reader" />
+          <TableColumn fx:id="textCol" prefWidth="480.0" text="Location Name" />
+        </columns>
+      </TableView>
+      <Label layoutX="79.0" layoutY="452.0" text="Do you wish to change the Location name?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullReaders" layoutX="102.0" layoutY="425.0" text="System full -- No reader addresses avaialable." textFill="#fc0909">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
