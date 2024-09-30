@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="583.0" prefWidth="620.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="locations.EnginesThisLocationController">
+   <children>
+      <Label layoutX="55.0" layoutY="14.0" text="Engines at this Location">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel" layoutX="440.0" layoutY="533.0" mnemonicParsing="false" onAction="#BtnCancel" prefHeight="34.0" prefWidth="134.0" text="Close">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableView" layoutX="19.0" layoutY="183.0" prefHeight="308.0" prefWidth="583.0">
+        <columns>
+          <TableColumn fx:id="roadCol" editable="false" prefWidth="127.0" resizable="false" text="Road" />
+          <TableColumn fx:id="numberCol" editable="false" prefWidth="73.0" resizable="false" text="Number" />
+            <TableColumn fx:id="typeCol" editable="false" prefWidth="139.0" resizable="false" text="Type" />
+            <TableColumn fx:id="colorCol" editable="false" resizable="false" text="Color" />
+            <TableColumn fx:id="ownerCol" editable="false" prefWidth="160.0" resizable="false" text="Owner" />
+        </columns>
+      </TableView>
+      <Label layoutX="19.0" layoutY="105.0" text="Current Location : ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="displayLocation" layoutX="19.0" layoutY="125.0" prefHeight="27.0" prefWidth="583.0" text="none wwwwwwwwwwwwwww">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="noEngines" layoutX="75.0" layoutY="499.0" text="Currently there are no engines assigned to this Location" textFill="#f20808">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
