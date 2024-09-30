@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.49404117009750814" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <VBox layoutX="127.0" layoutY="102.0" prefHeight="709.0" prefWidth="453.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="707.0" prefWidth="453.0" stylesheets="@AboutTextBG.css" text="When data are imported from the 3 JMRI Operations XML files that data is stored in serperate MqttRFID database tables until it has been processed. (Processing is discussed under the Programming section.)&#10;&#10;As each imported item has been processed into the normal MqttRFID data tables the item will be removed from these tables.&#10;&#10;Summary:&#10;The list shows what items are left to be processed. &#10;&#10;                    --------------&#10;NOTE: Please read the manual on how to prepare these files for importing." wrapText="true">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="152.0" layoutY="60.0" orientation="VERTICAL" prefHeight="709.0" prefWidth="464.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <ImageView fitHeight="323.0" fitWidth="342.0" layoutX="68.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/26534.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <TextArea editable="false" layoutX="2.0" layoutY="55.0" prefHeight="241.0" prefWidth="458.0" stylesheets="@AboutTextBG.css" text="Radio Frequency&#10;   Identification&#10;   JMRI Holding" wrapText="true" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="55.0">
+                                 <font>
+                                    <Font name="System Bold" size="47.0" />
+                                 </font>
+                              </TextArea>
+                              <TextField editable="false" layoutX="240.0" layoutY="308.0" style="-fx-background-color: lightgray;" text="Jim Kelly 9-13-2024" />
+                              <Label layoutX="111.0" layoutY="6.0" text=" Graphic Designed by rawpixel.com / Freepik" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

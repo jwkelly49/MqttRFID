@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1114.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MqttRFIDController">
+   <children>
+      <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="762.0" prefWidth="1105.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <FlowPane prefHeight="706.0" prefWidth="150.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="706.0" prefWidth="153.0">
+                     <children>
+                        <Button fx:id="BtnListAllCars" mnemonicParsing="false" onAction="#M_ListAllCars" prefHeight="78.0" prefWidth="152.0" text="List -- ALL -- Cars" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnListAllEngines" mnemonicParsing="false" onAction="#M_ListAllEngines" prefHeight="78.0" prefWidth="152.0" text="List -- ALL -- Engines" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnNewLocation" mnemonicParsing="false" onAction="#M_SetActiveReader" prefHeight="78.0" prefWidth="152.0" text="Pick New Location" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnListCarsLocation" mnemonicParsing="false" onAction="#M_CarsFromReader" prefHeight="78.0" prefWidth="152.0" text="List Cars at this Location" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="BtnListEngineLocation" mnemonicParsing="false" onAction="#M_EnginesFromReader" prefHeight="78.0" prefWidth="152.0" text="List Engines at this Location" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnPickWorkEngine" mnemonicParsing="false" onAction="#M_PickNewWorkEngine" prefHeight="78.0" prefWidth="152.0" text="Pick Work Engine" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="BtnEnginePickDropCar" mnemonicParsing="false" onAction="#M_PickDropCarLocation" prefHeight="78.0" prefWidth="152.0" text="Pickup - Drop Off with Engine" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnListCarsEngine" mnemonicParsing="false" onAction="#M_ListCarsCurrentEngine" prefHeight="78.0" prefWidth="152.0" text="List Cars for this Engine" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnTerminateEngine" mnemonicParsing="false" onAction="#M_TerminateEngine" prefHeight="78.0" prefWidth="152.0" text="Terminate Engine" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </right>
+         <bottom>
+            <Pane prefHeight="32.0" prefWidth="1105.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="44.0" layoutY="-10.0" prefHeight="40.0" prefWidth="90.0" text="Location:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="displayLocation" layoutX="134.0" layoutY="-6.0" prefHeight="40.0" prefWidth="263.0" text="********************************">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="645.0" layoutY="-10.0" prefHeight="40.0" prefWidth="68.0" text="Engine:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="displayEngine" layoutX="720.0" layoutY="-10.0" prefHeight="40.0" prefWidth="258.0" text="****************************">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+         </bottom>
+         <left>
+            <Pane prefHeight="705.0" prefWidth="23.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="22.0" text="..">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane fx:id="centerTabPane" layoutX="7.0" prefHeight="727.0" prefWidth="925.0" style="-fx-background-color: lightgray;" tabClosingPolicy="UNAVAILABLE" AnchorPane.topAnchor="-40.0">
+                    <tabs>
+                      <Tab fx:id="AboutIntro" text="AboutIntro">
+                           <content>
+                              <fx:include source="AboutIntro.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutNetwork" text="AboutNetwork">
+                           <content>
+                              <fx:include source="AboutNetwork.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutProgramming" text="AboutProgramming">
+                           <content>
+                              <fx:include source="AboutProgramming.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutLocations" text="AboutLocations">
+                           <content>
+                              <fx:include source="AboutLocations.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutEngines" text="AboutEngines">
+                           <content>
+                              <fx:include source="AboutEngines.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutReaders" text="AboutReaders">
+                           <content>
+                              <fx:include source="AboutReaders.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutRollingStock" text="RollingStock">
+                           <content>
+                              <fx:include source="AboutRollingStock.fxml" />
+                           </content></Tab>
+                        <Tab fx:id="AboutJmriHold" text="JMRIhold">
+                           <content>
+                              <fx:include source="AboutJmriHold.fxml" />
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu fx:id="M_File" mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="M_About_Intro" mnemonicParsing="false" onAction="#M_ShowIntro" text="About MqttRFID" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_Config" mnemonicParsing="false" onAction="#M_Config_Form" text="Configure MqttRFID" />
+                        <MenuItem fx:id="M_Import" mnemonicParsing="false" onAction="#M_JMRI_Import" text="Import JMRI Files" />
+                        <MenuItem fx:id="M_Exit" mnemonicParsing="false" onAction="#M_Exit_Program" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu fx:id="M_Network" mnemonicParsing="false" text="Network">
+                  <items>
+                    <MenuItem fx:id="M_About_Network" mnemonicParsing="false" onAction="#M_ShowNetwork" text="About  Network" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="M_Locations" mnemonicParsing="false" text="Locations">
+                     <items>
+                        <MenuItem fx:id="M_About_Locations" mnemonicParsing="false" onAction="#M_ShowLocations" text="About MqttRFID Locations" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_Change_Location" mnemonicParsing="false" onAction="#M_SetActiveReader" text="Change current Location" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_List_Cars_Reader" mnemonicParsing="false" onAction="#M_CarsFromReader" text="List Cars at current Location" />
+                        <MenuItem fx:id="M_List_Engines_Reader" mnemonicParsing="false" onAction="#M_EnginesFromReader" text="List Engines at current Location" />
+                        <MenuItem fx:id="M_View_Tracks_Location" mnemonicParsing="false" onAction="#M_ViewTracksLocation" text="View Tracks for current Location" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_AddNewReader" mnemonicParsing="false" onAction="#M_AddNewReader" text="Add New Location" />
+                        <MenuItem fx:id="M_EditLocation" mnemonicParsing="false" onAction="#M_EditReaderText" text="Edit Location" />
+                        <MenuItem fx:id="M_DeleteLocation" mnemonicParsing="false" onAction="#M_DeleteReader" text="Delete Location" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_AddNewTrack" mnemonicParsing="false" onAction="#M_AddNewTrackAction" text="Add a Track to Location" />
+                        <MenuItem fx:id="M_EditTrack" mnemonicParsing="false" onAction="#M_EditTrackAction" text="Edit Track Location" />
+                        <MenuItem fx:id="M_DeleteTrack" mnemonicParsing="false" onAction="#M_DeleteTrackAction" text="Delete Track Location" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="M_Engines" mnemonicParsing="false" text="Engines">
+                     <items>
+                        <MenuItem fx:id="M_About_Engines" mnemonicParsing="false" onAction="#M_ShowEngines" text="About MqttRFID Engines" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_Engine_Pick_Drop_Car" mnemonicParsing="false" onAction="#M_PickDropCarLocation" text="Pick-up or Drop-off a Car" />
+                        <MenuItem fx:id="M_List_Assigned_Cars_Engines" mnemonicParsing="false" onAction="#M_ListCarsCurrentEngine" text="List cars assigned to current Engine" />
+                        <MenuItem fx:id="M_Terminate_Engine" mnemonicParsing="false" onAction="#M_TerminateEngine" text="Terminate an Engine" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_New_Work_Engine" mnemonicParsing="false" onAction="#M_PickNewWorkEngine" text="Pick new work Engine" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="M_Readers" mnemonicParsing="false" text="Readers">
+                     <items>
+                        <MenuItem fx:id="M_About_Readers" mnemonicParsing="false" onAction="#M_ShowReaders" text="About MqttRFID Readers" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_Set_Reader" mnemonicParsing="false" onAction="#M_SetActiveReader" text="Set Active Reader" />
+                        <MenuItem fx:id="M_New_Reader" mnemonicParsing="false" onAction="#M_AddNewReader" text="Add a new Reader" />
+                        <MenuItem fx:id="M_Edit_Reader_Text" mnemonicParsing="false" onAction="#M_EditReaderText" text="Edit current Reader Location text" />
+                        <MenuItem fx:id="M_Delete_Reader" mnemonicParsing="false" onAction="#M_DeleteReader" text="Delete a Reader" />
+                        <MenuItem fx:id="M_Reader_Network" mnemonicParsing="false" onAction="#M_ReaderNetwork" text="Check Reader Network" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="M_Rolling_Stock" mnemonicParsing="false" text="Rolling Stock">
+                     <items>
+                        <MenuItem fx:id="M_About_Cars" mnemonicParsing="false" onAction="#M_ShowRollingStock" text="About Rolling Stock" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_List_All_Cars" mnemonicParsing="false" onAction="#M_ListAllCars" text="List all Cars" />
+                        <MenuItem fx:id="M_List_All_Engines" mnemonicParsing="false" onAction="#M_ListAllEngines" text="List all Engines" />
+                        <MenuItem fx:id="M_List_All_Visitors" mnemonicParsing="false" onAction="#M_ListAllVisitors" text="List all Visitors" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_Delete_Car" mnemonicParsing="false" onAction="#M_DeleteACar" text="Delete a Car" />
+                        <MenuItem fx:id="M_Delete_Engine" mnemonicParsing="false" onAction="#M_DeleteAnEngine" text="Delete an Engine" />
+                        <MenuItem fx:id="M_Delete_Visitor" mnemonicParsing="false" onAction="#M_DeleteAVisitor" text="Delete a Visitor" />
+                     </items>
+                  </Menu>
+                <Menu fx:id="M_Programming" mnemonicParsing="false" text="Programming">
+                  <items>
+                    <MenuItem fx:id="M_About_Programming" mnemonicParsing="false" onAction="#M_ShowProgramming" text="About Programming" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_Add_New_Car" mnemonicParsing="false" onAction="#M_AddNewCar" text="Add New car / engine" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_visiting" mnemonicParsing="false" onAction="#M_visitingStock" text="Visiiting Stock" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_JMRI_Car_Hold" mnemonicParsing="false" onAction="#M_WorkJmriCarHold" text="Work w/ JMRI Car Hold" />
+                        <MenuItem fx:id="M_JMRI_Engine_Hold" mnemonicParsing="false" onAction="#M_WorkJmriEngineHold" text="Work w/ JMRI Engine Hold" />
+                        <MenuItem fx:id="M_JMRI_Location_Hold" mnemonicParsing="false" onAction="#M_WorkJmriLocationHold" text="Work w/ JMRI Location Hold" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="M_Holding" mnemonicParsing="false" text="JMRI Hold">
+                     <items>
+                        <MenuItem fx:id="M_Show_Jmri_Hold" mnemonicParsing="false" onAction="#M_ShowJmriHold" text="About JMRI Hold" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="M_View_JMRI_Cars" mnemonicParsing="false" onAction="#M_ViewJmriCars" text="View JMRI Cars on hold" />
+                        <MenuItem fx:id="M_View_JMRI_Engines" mnemonicParsing="false" onAction="#M_ViewJmriEngines" text="View JMRI Engines on hold" />
+                        <MenuItem fx:id="M_View_JMRI_Locations" mnemonicParsing="false" onAction="#M_ViewJmriLocations" text="View JMRI Locations on hold" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

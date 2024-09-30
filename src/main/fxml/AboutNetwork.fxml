@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.49404117009750814" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <VBox layoutX="127.0" layoutY="102.0" prefHeight="709.0" prefWidth="453.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="668.0" prefWidth="447.0" stylesheets="@AboutTextBG.css" text="Version 2.0 of SerialRFID (now named MqttRFID) no longer uses a serial port connection to the readers. The Serial port network has been replaced with a MQTT broker via a WiFi network.&#10;&#10;The MQTT broker is routinely tested and canot be disabled. If the broker connection is lost a pop-up will notify you and the program will shut down.&#10;The MQTT broker must be installed on the localhost with port address 1883.&#10;&#10;At start-up the network queries the network for all possible readers (A-Y) and compares those with the database record for installed readers. A popup will advise you of:&#10;1 -- Reader hardware installed but not entered in the database as installed.&#10;2 -- Database entries for expected Readers for which no installed hardware can be found.&#10;If the database and hardware match you will see a &quot;Good to go&quot; statement; close the popup and have fun. &#10;&#10;" wrapText="true">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="152.0" layoutY="60.0" orientation="VERTICAL" prefHeight="709.0" prefWidth="464.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <ImageView fitHeight="323.0" fitWidth="413.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/wifi2.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <TextArea editable="false" layoutX="3.0" layoutY="3.0" prefHeight="237.0" prefWidth="454.0" stylesheets="@AboutTextBG.css" text="Radio Frequency&#10;   Identification&#10;       NETWORK" wrapText="true" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="System Bold" size="47.0" />
+                                 </font>
+                              </TextArea>
+                              <TextField editable="false" layoutX="240.0" layoutY="308.0" style="-fx-background-color: lightgray;" text="Jim Kelly 9-13-2024" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

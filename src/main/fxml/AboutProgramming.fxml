@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.49404117009750814" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <VBox layoutX="127.0" layoutY="102.0" prefHeight="709.0" prefWidth="453.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="707.0" prefWidth="453.0" stylesheets="@AboutTextBG.css" text="Programming can only be done using reader 'A'. (See manual for more details.)&#10;&#10;Basics: A car with a new RFID tag is placed on reader 'A'. The user fills in the data on the computer screen and it is sent to reader 'A' and recorded on the new tag. Then reader 'A' sends back the tag RFID identification number. The tag ID and car information are then stored in a MqttRFID database. &#10;&#10;Visitors: Sometimes guests will bring their own rolling stock (with a RFID tag) to run on your layout or you have new stock (with a RFID tag) to enter permanently into the database. Use the visitor form to enter this stock. Be sure to indicate if it is a 'Car&quot; or 'Engine' and if it is a 'Visitor' (for inventory tracking) or 'Permanent' entry to the database.&#10;&#10;      *** JMRI IMPORTING ***&#10;&#10;JMRI -- If records have been imported from JMRI they are stored in 'holding' database tables. The user then selects the appropriate JMRI 'work with' menu to process each item. Selecting an item 'fills in' the programming fields and you add the 'owners' name and send the information to the tag on reader 'A'&#10;&#10;Once the tag returns the ID the car/engine is moved into the normal MqttRFID database and becomes available for use.&#10;&#10;The basics:&#10;1 -- make a copy of the Operations Car/Engine/Locations Rosters (never use the original files.)&#10;2 -- Use a text editor and delete the line &lt;!DOCTYPE operations-config SYSTEM &quot;/xml/DTD/operations-cars.dtd&quot;&gt;&#10;3 -- Use the 'File/Configure SerialJMRI' menu and record the path to your file copies.&#10;4 -- Use the 'File/Import JMRI files' menu and import the desired file(s). (They will now have entries in the JMRI Hold menu and are ready to use.)&#10;&#10;&#10;" wrapText="true">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="152.0" layoutY="60.0" orientation="VERTICAL" prefHeight="709.0" prefWidth="464.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <ImageView fitHeight="323.0" fitWidth="435.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/person-working-html-computer.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <TextArea editable="false" layoutX="2.0" layoutY="2.0" prefHeight="241.0" prefWidth="458.0" stylesheets="@AboutTextBG.css" text="Radio Frequency&#10;   Identification&#10;   Programming" wrapText="true" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                 <font>
+                                    <Font name="System Bold" size="47.0" />
+                                 </font>
+                              </TextArea>
+                              <TextField editable="false" layoutX="240.0" layoutY="308.0" style="-fx-background-color: lightgray;" text="Jim Kelly 9-13-2024" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

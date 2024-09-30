@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.49404117009750814" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <VBox layoutX="127.0" layoutY="102.0" prefHeight="709.0" prefWidth="453.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="707.0" prefWidth="453.0" stylesheets="@AboutTextBG.css" text="Readers are the heart and soul of the program and it's why you use the program at all, so the requirement of at least one reader should be self-evident.&#10;The program must have a reader 'A' and since this is the minimum amount of readers required all write operations to a RFID tag are performed only to this reader. &#10;Switch usage:&#10;Assign -- &#10;To properly transfer cars between an Engine and a Location the program must know which engine is at which location. Place the Engine on the reader and toggle the 'assign' switch. Now the Location and Engine are linked.&#10;NOTE: In normal operations sessions multiple cars will be 'picked' and 'dropped' at a location. Once an Engine has been assigned to a Location it remains assigned until the assign switch is used again. ALWAYS assign the Engine before working a location or the cars will be transferred to the last assigned Engine.&#10;&#10;Pickup --&#10;(Also called Pull or Pulled) The computer will transfer the car record from the current Location and attach it to the Engine for movement to another Location.&#10;Release --&#10;Once the reader has detected a car it is ‘locked’ to that tag preventing a constant hunt for a tag. When a car has been successfully ‘Picked’ or ‘Dropped’ you must release the reader so it can be used by the next car. If an error is reported the car must be released from the reader so that it can look for the car again.&#10;Drop --&#10;The Computer will transfer the car record from the Engine and attach it to the current Location.&#10;Green LED --&#10;(On) A solid green means that the reader has discovered a new car over the reader.&#10;Red LED --&#10;(On) a solid red means an error has occurred. Remove the car and reposition it for a green LED.&#10;&#10;By default the Arduino code will assign the address 'A' to all readers. &#10;&#10;When a new reader is powered up it needs to gain access to the network so it creates a Web server. Look on your computer for available networks and choose &quot;New Reader.&quot; Enter the capital letter address (A-Y) for this reader and the IP address for the MQTT broker. &#10;&#10;The address of Z is reserved for system use.&#10;&#10;See Manual for more details.&#10;" wrapText="true">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="152.0" layoutY="60.0" orientation="VERTICAL" prefHeight="709.0" prefWidth="464.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <ImageView fitHeight="323.0" fitWidth="435.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/readers_pic.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <TextArea editable="false" layoutX="2.0" layoutY="2.0" prefHeight="241.0" prefWidth="458.0" stylesheets="@AboutTextBG.css" text="Radio Frequency&#10;   Identification&#10;      READERS" wrapText="true" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                 <font>
+                                    <Font name="System Bold" size="47.0" />
+                                 </font>
+                              </TextArea>
+                              <TextField editable="false" layoutX="240.0" layoutY="308.0" style="-fx-background-color: lightgray;" text="Jim Kelly 9-13-2024" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

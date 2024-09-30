@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.49404117009750814" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <VBox layoutX="127.0" layoutY="102.0" prefHeight="709.0" prefWidth="453.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="688.0" prefWidth="447.0" stylesheets="@AboutTextBG.css" text="Fundamentally MqttRFID provides the user with an easy to use Liquid Crystal Display (LCD) showing the road markings of your rolling stock and a database for tracking rolling stock location.&#10;&#10;To accomplish this each piece of stock must have a Radio Frequency Identification (RFID) tag. The local LCD display will show &#10;1- Road name (Milw)&#10;2- Road Number (123) &#10;3- Type (boxcar) &#10;4- Color (Green)&#10;5- Owner (John Doe) screen toggles&#10;&#10;Items 1-4 were selected because of the ease they create while working a yard; say during an operations session. Item 5 can help clubs and OPS hosts to identify who owns that piece of stock when there is duplicate stock with identical markings. &#10;&#10;MqttRFID is not integrated with JMRI but it does have a 'hook' into its XML files so that if you have entered your engines, cars and locations that information can be pulled into MqttRFID and even send that information to a RFID chip without having to manually reenter all that data. A small modification to these files is required; the details are explained in the manual." wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="152.0" layoutY="60.0" orientation="VERTICAL" prefHeight="709.0" prefWidth="464.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <ImageView fitHeight="323.0" fitWidth="435.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/rfid_pic.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;">
+                           <children>
+                              <TextArea editable="false" layoutX="3.0" layoutY="3.0" prefHeight="244.0" prefWidth="454.0" stylesheets="@AboutTextBG.css" text="          Radio&#10;      Frequency&#10;    Identification" wrapText="true" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="System Bold" size="47.0" />
+                                 </font>
+                              </TextArea>
+                              <TextField editable="false" layoutX="240.0" layoutY="308.0" style="-fx-background-color: lightgray;" text="Jim Kelly 9-13-2024" />
+                              <TextArea layoutX="129.0" layoutY="239.0" prefHeight="43.0" prefWidth="200.0" stylesheets="@AboutTextBG.css" text="Designed for MQTT">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
