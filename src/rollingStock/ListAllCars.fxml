@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="632.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rollingStock.ListAllCarsController">
+   <children>
+      <Label layoutX="220.0" layoutY="20.0" text="List All Cars">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="272.0" layoutY="90.0" text="Read only inventory">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="28.0" layoutY="138.0" prefHeight="405.0" prefWidth="705.0">
+        <columns>
+          <TableColumn fx:id="roadName" prefWidth="136.0" text="roadName" />
+          <TableColumn fx:id="roadNumber" prefWidth="89.0" text="roadNumber" />
+            <TableColumn fx:id="type" prefWidth="196.0" text="type" />
+            <TableColumn fx:id="color" prefWidth="110.0" text="color" />
+            <TableColumn fx:id="owner" prefWidth="163.0" text="owner" />
+        </columns>
+      </TableView>
+      <Button fx:id="close" layoutX="551.0" layoutY="568.0" mnemonicParsing="false" onAction="#BtnClose" prefHeight="51.0" prefWidth="143.0" text="Close">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="emptyInventory" layoutX="28.0" layoutY="560.0" text="Currently there are no cars in the Inventory" textFill="#ff0606">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
