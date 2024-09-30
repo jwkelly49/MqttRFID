@@ -1,0 +1,6 @@
+The bill of materials (BOM) file may have a few holes but it should give you a good idea of the parts needed. The supplier is LCSC ( https://lcsc.com/en ) which is integrated into the EasyEDA program. A few parts were ordered from Newark ( https://www.newark.com/ )
+
+The Gerber file can be sent directly to JLCPCB, also integrated into EasyEDA ( https://jlcpcb.com/ ), to order the PCB without changes.
+
+
+The two json files can be imported directly into EasyEDA and then modified.
