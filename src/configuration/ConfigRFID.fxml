@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="764.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configuration.ConfigRFIDController">
+   <children>
+      <SplitPane dividerPositions="0.4881889763779528" layoutX="123.0" layoutY="66.0" prefHeight="516.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray;">
+               <children>
+                  <TextArea editable="false" prefHeight="435.0" prefWidth="369.0" stylesheets="@AboutTextBG.css" text="&#10;&#10;Before you can use the MqttRFID JMRI feature you must configure a few items:&#10;&#10;1 -- Use or don't use the JMRI mode&#10;2 -- Select the path for:&#10;        -- OperationsCarRoster.xml&#10;        -- OperationsEngineRoster.xml&#10;        -- OperationsLocationRoster.xml&#10;&#10;3-- Reader Address and the MQTT broker IP address. These features are configured using a Web server and your browser. See the manual for details." wrapText="true">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea editable="false" layoutY="445.0" prefHeight="70.0" prefWidth="369.0" style="-fx-background-color: lightgray;" stylesheets="@AboutTextBG.css" text="The JMRI mode may be configured later using the FILE--Configure menu entry." wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray;">
+               <children>
+                  <TextField fx:id="TFcomPort" disable="true" editable="false" layoutX="137.0" layoutY="48.0" prefHeight="25.0" prefWidth="217.0" promptText="Deprecated (from Ver. 1.0)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="RBntNotUseJMRI" layoutX="186.0" layoutY="128.0" mnemonicParsing="false" onAction="#NoJMRIaction" text="Don't Use JMRI">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="JMRIstatus" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="RBtnUseJMRI" layoutX="55.0" layoutY="128.0" mnemonicParsing="false" onAction="#UseJMRIaction" selected="true" text="Use JMRI" toggleGroup="$JMRIstatus">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Pane fx:id="PaneVisibleAction" layoutX="30.0" layoutY="157.0" prefHeight="261.0" prefWidth="327.0" style="-fx-background-color: lightgray;">
+                     <children>
+                        <TextField fx:id="TFcarRoster" layoutX="14.0" layoutY="39.0" prefHeight="30.0" prefWidth="301.0" promptText="path + file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="TFengineRoster" layoutX="14.0" layoutY="106.0" prefHeight="30.0" prefWidth="301.0" promptText="path + file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="TFlocationRoster" layoutX="13.0" layoutY="182.0" prefHeight="30.0" prefWidth="301.0" promptText="path + file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="BtnCarRoster" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#CarRosterAtion" snapToPixel="false" text="CarRoster" />
+                        <Button fx:id="BtnEngineRoster" layoutX="13.0" layoutY="81.0" mnemonicParsing="false" onAction="#EngineRosterAction" text="Engine Roster" />
+                        <Button fx:id="BtnLocationRoster" layoutX="13.0" layoutY="157.0" mnemonicParsing="false" onAction="#LocationRosterAction" text="Location Roster" />
+                        <Label layoutX="14.0" layoutY="212.0" prefHeight="44.0" prefWidth="301.0" text="NOTE: Please read the manual on how to prepare these files for importing." wrapText="true" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="BtnSubmit" layoutX="52.0" layoutY="456.0" mnemonicParsing="false" onAction="#SaveAction" prefHeight="44.0" prefWidth="89.0" text="Save">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtnCancel" cancelButton="true" layoutX="219.0" layoutY="456.0" mnemonicParsing="false" onAction="#CancelAction" text="Cancel">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtnCommPort" defaultButton="true" disable="true" layoutX="30.0" layoutY="48.0" mnemonicParsing="false" onAction="#CommPortAction" text="COMMPort" textFill="#8d8a8a">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="53.0" layoutY="418.0" text="Changes require" />
+                  <Label layoutX="42.0" layoutY="435.0" text="Save/Close program" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
