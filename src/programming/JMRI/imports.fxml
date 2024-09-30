@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="701.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programming.JMRI.ImportsController">
+   <children>
+      <Label layoutX="156.0" layoutY="31.0" text="Import JMRI files">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="cars" layoutX="406.0" layoutY="134.0" mnemonicParsing="false" onAction="#carsAction" selected="true" text="Cars Only">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="engines" layoutX="406.0" layoutY="207.0" mnemonicParsing="false" onAction="#enginesAction" text="Engines Only" toggleGroup="$group">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="locations" layoutX="406.0" layoutY="285.0" mnemonicParsing="false" onAction="#locationsAction" text="Locations Only" toggleGroup="$group">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </RadioButton>
+      <TextArea editable="false" layoutX="28.0" layoutY="134.0" prefHeight="433.0" prefWidth="269.0" style="-fx-background-color: lightgray;" stylesheets="@AboutTextBG.css" text="NOTE: Please read the manual on how to prepare these files for importing.&#10;----------------------------------&#10;To import the JMRI operations files make sure that you have sellected USE JMRI and entered the file names and paths.&#10;&#10;If not this can be done using:&#10;File/Configure MqttRFID menu option. Once imported you can view these files using:&#10;JMRI Hold  menu option&#10;&#10;&#10;" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="doImport" layoutX="373.0" layoutY="503.0" mnemonicParsing="false" onAction="#importAction" prefHeight="63.0" prefWidth="111.0" text="Import">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancel" layoutX="522.0" layoutY="503.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="63.0" prefWidth="111.0" text="Cancel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

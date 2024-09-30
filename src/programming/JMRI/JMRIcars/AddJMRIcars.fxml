@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="620.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programming.JMRI.JMRIcars.AddJMRIcarsController">
+   <children>
+      <Label layoutX="20.0" layoutY="14.0" text="Add JMRI Cars to database">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="92.0" text="Requires a RFID tag and the car placed on Reader A">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel" layoutX="357.0" layoutY="507.0" mnemonicParsing="false" onAction="#BtnCancel" prefHeight="51.0" prefWidth="156.0" text="Cancel">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableView" layoutX="22.0" layoutY="151.0" onMouseClicked="#tableViewMouseAction" prefHeight="303.0" prefWidth="583.0">
+        <columns>
+          <TableColumn fx:id="roadCol" editable="false" prefWidth="115.0" resizable="false" text="Road" />
+          <TableColumn fx:id="numberCol" editable="false" prefWidth="103.0" resizable="false" text="Number" />
+            <TableColumn fx:id="typeCol" editable="false" prefWidth="129.0" resizable="false" text="Type" />
+            <TableColumn fx:id="colorCol" editable="false" prefWidth="76.0" resizable="false" text="Color" />
+            <TableColumn fx:id="rfidCol" editable="false" prefWidth="23.0" resizable="false" text="RFID" visible="false" />
+        </columns>
+      </TableView>
+      <Label fx:id="emptyInventory" layoutX="127.0" layoutY="465.0" text="Currently there are no cars in the Inventory" textFill="#e80606">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="add" layoutX="86.0" layoutY="507.0" mnemonicParsing="false" onAction="#BtnAdd" prefHeight="51.0" prefWidth="156.0" text="Import">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

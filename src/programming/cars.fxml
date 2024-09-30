@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="680.0" prefWidth="634.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programming.CarsController">
+   <children>
+      <Label layoutX="353.0" layoutY="373.0" text="carRFID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="439.0" text="color (Car)  model (Engine)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="373.0" text="owner (Human / Club)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="498.0" text="roadname">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="353.0" layoutY="498.0" text="roadnumber">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="353.0" layoutY="439.0" text="type (Box / Diesel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TFcarRFID" editable="false" focusTraversable="false" layoutX="353.0" layoutY="400.0" prefHeight="25.0" prefWidth="238.0" text="Supplied by the reader" />
+      <TextField fx:id="TFcolor" layoutX="62.0" layoutY="466.0" prefColumnCount="16" prefHeight="25.0" prefWidth="238.0" promptText="TFcolor" />
+      <TextField fx:id="TFowner" layoutX="62.0" layoutY="400.0" prefColumnCount="16" prefHeight="25.0" prefWidth="238.0" promptText="TFowner" />
+      <TextField fx:id="TFroadname" layoutX="62.0" layoutY="525.0" prefColumnCount="16" prefHeight="25.0" prefWidth="238.0" promptText="TFroadname" />
+      <TextField fx:id="TFroadnumber" layoutX="353.0" layoutY="525.0" prefColumnCount="16" prefHeight="25.0" prefWidth="238.0" promptText="TFroadnumber" />
+      <TextField fx:id="TFtype" layoutX="353.0" layoutY="466.0" prefColumnCount="16" prefHeight="25.0" prefWidth="238.0" promptText="TFtype" />
+      <Button fx:id="BtnToReader" layoutX="110.0" layoutY="571.0" mnemonicParsing="false" onAction="#BtnnSendToReaderAction" prefHeight="70.0" prefWidth="142.0" text="Send to Reader A" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="BtnCancel" layoutX="401.0" layoutY="571.0" mnemonicParsing="false" onAction="#BtnCancelAction" prefHeight="70.0" prefWidth="142.0" text="Cancel">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <TextArea editable="false" layoutX="55.0" layoutY="37.0" prefHeight="320.0" prefWidth="524.0" style="-fx-background-color: lightgray;" stylesheets="@TextBG.css" text="Fill in values for &#10;owner + color + type + roadname + roadnumber.&#10;Select whether this is a car or an engine.&#10;Place car/engine  on Reader 'A'&#10;Press 'Send to Reader 'A'&#10;&#10;------ wait for Reader 'A' To send back the RFID tag -----------&#10;After the pop-up 'success' window the new car/engine will be entered into the database and all fields will be cleared ready for you to input the next car/engine." wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </TextArea>
+      <RadioButton fx:id="carRadio" layoutX="274.0" layoutY="571.0" mnemonicParsing="false" onMouseClicked="#groupClickAction" selected="true" text="Car">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="engineRadio" layoutX="274.0" layoutY="614.0" mnemonicParsing="false" onMouseClicked="#groupClickAction" text="Engine" toggleGroup="$toggleGroup">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="62.0" layoutY="357.0" text="Limit 16 characters per field" textFill="#807c7c" />
+   </children>
+</AnchorPane>
