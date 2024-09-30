@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="632.0" prefWidth="1508.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="engines.PickupDropoffController">
+   <children>
+      <Label layoutX="143.0" layoutY="14.0" text="Pickup or Dropoff between this Engine and Location">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="90.0" text="Engine :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="28.0" layoutY="138.0" onMouseClicked="#tableViewMouseAction" prefHeight="352.0" prefWidth="705.0">
+        <columns>
+          <TableColumn fx:id="roadName" prefWidth="136.0" text="roadName" />
+          <TableColumn fx:id="roadNumber" prefWidth="89.0" text="roadNumber" />
+            <TableColumn fx:id="type" prefWidth="196.0" text="type" />
+            <TableColumn fx:id="color" prefWidth="110.0" text="color" />
+            <TableColumn fx:id="owner" prefWidth="165.0" text="owner" />
+            <TableColumn fx:id="rfidCol" prefWidth="67.0" text="rfid" visible="false" />
+        </columns>
+      </TableView>
+      <Button fx:id="close" layoutX="662.0" layoutY="573.0" mnemonicParsing="false" onAction="#BtnCancel" prefHeight="51.0" prefWidth="143.0" text="Close">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="dropoff" layoutX="536.0" layoutY="506.0" mnemonicParsing="false" onAction="#BtnDropoffAction" prefHeight="51.0" prefWidth="183.0" text="DropOff --&gt;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="28.0" layoutY="501.0" prefHeight="92.0" prefWidth="426.0" text="Select a car from the 'Engine' list to be 'Dropped Off' (moved to the Location list.) Then click the DropOff button." wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableViewLocations" layoutX="763.0" layoutY="140.0" onMouseClicked="#tableViewLocationMouseAction" prefHeight="352.0" prefWidth="705.0">
+         <columns>
+            <TableColumn fx:id="roadName2" prefWidth="136.0" text="roadName" />
+            <TableColumn fx:id="roadNumber2" prefWidth="89.0" text="roadNumber" />
+            <TableColumn fx:id="type2" prefWidth="196.0" text="Type" />
+            <TableColumn fx:id="color2" prefWidth="110.0" text="Color" />
+            <TableColumn fx:id="owner2" prefWidth="165.0" text="Owner" />
+            <TableColumn fx:id="rfid2" prefWidth="21.0" text="RFID" visible="false" />
+         </columns>
+      </TableView>
+      <Label layoutX="782.0" layoutY="90.0" text="Location :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="displayEngineName" layoutX="177.0" layoutY="95.0" prefHeight="17.0" prefWidth="426.0" text="Label" />
+      <Label fx:id="displayLocationName" layoutX="897.0" layoutY="95.0" prefHeight="17.0" prefWidth="426.0" text="Label" />
+      <Label layoutX="1042.0" layoutY="506.0" prefHeight="92.0" prefWidth="426.0" text="Select a car from the 'Location' list to be 'Picked Up' (moved to the Engine list.) Then click the PickUp button." wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="pickup" layoutX="782.0" layoutY="506.0" mnemonicParsing="false" onAction="#BtnPickupAction" prefHeight="51.0" prefWidth="183.0" text="&lt;-- PickUp">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="emptyEngine" layoutX="91.0" layoutY="593.0" text="This Engine currnetly has no rolling stock assigned." textFill="#eb1818" visible="false">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="emptyLocation" layoutX="918.0" layoutY="593.0" text="This Location currnetly has no rolling stock assigned." textFill="#eb1818" visible="false">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
