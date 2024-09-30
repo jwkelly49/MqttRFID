@@ -6,7 +6,7 @@ I recommend reading at least the first few pages of the manual before proceeding
 
 I tried to make a zip file but it became too large for a Github upload. 
 - make a folder (MqttRFID) somewhere permanent on your hard drive.
-- copy the EXE file here
+- copy the JAR file here
 - make a subFolder (lib)
 - copy the lib files to your lib folder.
 
